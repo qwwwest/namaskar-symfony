@@ -1,0 +1,30 @@
+<!-- gallery -->
+
+<div id="{= this.id}" data-namaskar-gallery="3cols" class="namaskar-gallery">
+  <div class="row row-cols-1 row-cols-md-2">
+    {foreach item in this.items}
+
+    <div data-namaskar-gallery-item="" class="col gallery-item">
+
+      {if item.youtube}
+      <a data-bs-toggle="modal" data-bs-target="#lightboxModal" data-namaskar-gallery-index="{= item.index}">
+        <div class="namaskar-gallery-thumbnail"> {youtube {= item.youtube} thumbnail }</div>
+        <div class="namaskar-gallery-content"> {youtube {= item.youtube} }</div>
+      </a>
+      {/if}
+
+      {if item.img}
+      <a data-bs-toggle="modal"   data-namaskar-gallery-index="{= item.index}">
+         <div class="namaskar-gallery-content">{img {= item.img} title="{= item.title}" }</div>
+      </a>
+      {/if}
+
+    </div>
+    {/foreach}
+
+  </div>
+
+
+
+</div>
+<!-- /gallery -->

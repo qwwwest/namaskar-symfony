@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+html {
+    font-family: 'Roboto Mono', monospace;
+}
+
+main {
+    white-space: pre-wrap;
+}
+
+.sidemenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 1rem 1rem;
+}
+
+.sidemenu ul a {
+    color: black;
+
+}
+
+.sidemenu a.active {
+
+    font-weight: bold;
+
+}

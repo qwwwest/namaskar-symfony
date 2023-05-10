@@ -1,0 +1,16 @@
+<!--includes/menu-links.html-->
+
+{% for elt in elts %}
+{% if elt.active or level != 0 or parentActive %}
+<li>
+    <a href="{{ asset(elt.url) }}" {{ elt.active ? 'class="active"' : '' }}>{{ elt.title }}</a>
+    {% if elt.children %}
+    <ul>
+        {% include "mempad/menu-links.html.twig" with {'elts': elt.children, 'level':level -1,
+        'parentActive': elt.active} %}
+    </ul>
+    {% endif %}
+</li>
+{% endif %}
+{% endfor %}
+<!--includes/menu-links.html-->

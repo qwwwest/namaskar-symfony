@@ -1,0 +1,32 @@
+<!-- Newsletter -->
+
+<form   method="post" class="newsletter-form">
+  <div class="form-group">
+      <label for="prenom">Prenom*</label>
+      <input type="text" name="firstname"   class="form-control" id="firstname" value="{= site.newsletter.firstname}" required />
+    </div>
+  
+  <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" class="form-control" id="lastname" name='lastname' value="{= site.newsletter.lastname}"  />
+  
+    </div>
+  
+    <div class="form-group">
+      <label for="nom">{= site.newsletter.challenge}</label>
+      <input type="text" class="form-control" id="challenge" name='challenge' required >
+      <input type="hidden" class="form-control" id="blep" name='blep' value="{= site.newsletter.blep}" />
+    </div>
+  
+  <div class="form-group">
+      <label for="nom">Email*</label>
+      <input type="text" class="form-control" id="email" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="{= site.newsletter.email}" required/>
+    </div>
+  
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary {? site.newsletter.done hidden}" name="submit" value="go">GO</button>
+    </div>
+  
+  </form>
+
+<!-- /Newsletter -->

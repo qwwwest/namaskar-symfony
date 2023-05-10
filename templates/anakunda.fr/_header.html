@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="{= site.language}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {= site.meta}
+    <title>{= page.title}</title>
+    <!-- Bootstrap core CSS -->
+<link href="./assets/{= site.theme}/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="./assets/{= site.theme}/namaskar.css" rel="stylesheet">
+ <link href="./assets/{= site.theme}/main.css" rel="stylesheet">
+ <link href="./assets/vendor/audio-player/audio-player.css" rel="stylesheet">
+
+    <style>
+      
+    </style>
+  </head>
+  <body class="{? page.isHome home} {= page.body.class}">
+
+    <div class="container p-relative">
+
+    <div id="bg" >
+    </div>
+    <header>      
+      <button class="navbar-toggler collapsed menu-button {= site.menu-button}" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+           <div class="hamburger">
+             <span></span>
+             <span></span>
+             <span></span>
+           </div>
+      </button>
+        <div class="collapse" id="navbarHeader">
+    
+            <div class="row">
+              {if site.language == "fr"}
+              <div class="col-sm-8 col-md-6 py-4">
+ 
+                <ul class="dynsubmenu2">
+                  <li><a href="activites">Activités</a></li>
+                </ul>
+     
+                <p class="text-muted px-2">        
+                  <!-- TOPNAV -->
+                   {dynmenu "/activites" 3}
+                  <!-- /TOPNAV --></p>
+                                  
+              </div>
+              {/if}
+              <div class="col-sm-5 offset-md-1 py-4">
+                <!-- mainMenu -->
+                <ul class="dynsubmenu2">
+                  {foreach item in site.menu.main}           
+                  {if item.active}
+                  <li class="current"><a href="{= item.url}">{= item.label}<span class="sr-only">(current)</span></a></li>
+
+                    {else}
+                    <li><a href="{= item.url}">{= item.label}</a></li>
+                    {/if} 
+                  {/foreach}
+                  </ul>
+                 
+                  <!-- /mainMenu -->
+                  
+              </div>
+          
+          </div>
+        </div>
+
+        <div class="navbar navbar-light bg-light">
+          <div class="container bg-anakunda">
+             
+            <a href="{= site.homeURL}" class="navbar-brand d-flex align-items-between mx-auto">
+               <h1 class="d-none">{= site.name}</h1>{img "logo.png"}
+            </a>
+
+           
+           
+          </div>
+        </div>
+        {> language-menu site.menu.language}
+      </header>
+     

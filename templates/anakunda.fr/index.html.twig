@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block stylesheets %}
+
+<link rel="stylesheet" type="text/css" href="{{ asset('asset/vendor/bootstrap-5.3.0/css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('asset/mempad.css') }}">
+{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+<div class="container-full ">
+
+
+    <h1>{{ title }}</h1>
+
+
+    <div class="row">
+        <aside class="col-4 sidemenu">
+            {% include 'mempad/aside.html.twig' %}
+        </aside>
+        <main class="col">
+            {{ content | raw }}
+        </main>
+    </div>
+
+
+
+
+    {% include 'mempad/footer.html.twig' %}
+</div>
+{% endblock %}

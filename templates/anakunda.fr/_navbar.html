@@ -1,0 +1,12 @@
+<!-- mainMenu -->
+<ul class="main-menu"> TITI
+{foreach item in $attributes[1]} 
+TOTO
+{if item.active}
+<li class="current"><a href="{= item.url}">{= item.label}<span class="sr-only">(current)</span></a></li>
+  {else}
+  <li><a href="{= item.url}">{= item.label}</a></li>
+  {/if} 
+{/foreach}
+</ul>
+<!-- /mainMenu -->
